@@ -3,17 +3,81 @@
 
 /* layout */
 :root {
-  --primary: #1aac83;
-  --error: #e7195a;
+  --primary: #5B98A6;
+  --error: #A0CED9;
+  --background: #D0ECF2;
+  --header-bg: #592B27;
+  --header-text: #D0ECF2;
+  --link-color: #D0ECF2;
+  --workout-title: #5B98A6;
+  --workout-text: #D0ECF2;
+  --workout-details-bg: #592B27;
+  --workout-details-shadow: rgba(0, 0, 0, 0.05);
+  --workout-details-button-bg: #EEE2DE;
+  --workout-details-button-text: #5B98A6;
+  --form-input-border: #5B98A6;
+  --form-button-bg: #4F1A09;
+  --form-button-text: #FFF;
+  --form-error-bg: #341105;
+  --form-error-text: #FFF;
+  --nav-button-bg: #592B27;
+  --nav-button-text: #A0CED9;
+  --nav-button-border: #D0ECF2;
+  --auth-form-bg: #FFF;
+}
+.WorkoutformContainer {
+  background-color: #EEE2DE;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px auto;
+  width: 500px;
+  margin: 40px auto;
+}
+nav span {
+  position: relative;
+  color: #A0CED9;
+  font-size: 1.2em;
+  
+}
+.lnks a{
+  background: var(--nav-button-bg);
+  color: var(--nav-button-text);
+  border: 2px solid var(--nav-button-border);
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1.2em;
+  
+} 
+
+nav span::after {
+  content: attr(title);
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #EEE2DE;
+  color: #341105;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+nav span:hover::after {
+  display: block;
 }
 body {
-  background: #D5CEA3;
+  background: var(--background);
   margin: 0;
   font-family: "Poppins";
 }
+
 header {
-  background: #E5E5CB;
+  background: var(--header-bg);
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -22,11 +86,13 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
-  color: #3C2A21;
+  color: var(--link-color);
   text-decoration: none;
 }
-.pages{
+
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
@@ -38,65 +104,77 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+
 .workout-details {
-  background: #fff;
+  background: var(--workout-details-bg);
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px var(--workout-details-shadow);
 }
+
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  color: #CC9544;
+  color: var(--workout-title);
 }
+
 .workout-details p {
   margin: 0;
   font-size: 0.9em;
-  color: #555;
+  color: var(--workout-text);
 }
+
 .workout-details span {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--workout-details-button-bg);
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: var(--workout-details-button-text);
 }
 
 /* new workout form */
-label, input {
+label,
+input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #3C2A21;
+  border: 1px solid var(--form-input-border);
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 form button {
-  background: #3C2A21;
+  background: var(--form-button-bg);
   border: 0;
-  color: #fff;
+  color: var(--form-button-text);
   padding: 10px;
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
 }
+form button:hover {
+  background-color: var(--nav-button-text);
+  color: #341105;
+}
 div.error {
   padding: 10px;
-  background: #3C2A21;
+  background: var(--form-error-bg);
   border: 1px solid var(--error);
-  color: var(--error);
+  color: var(--form-error-text);
   border-radius: 4px;
   margin: 20px 0;
 }
+
 input.error {
   border: 1px solid var(--error);
 }
@@ -106,25 +184,37 @@ nav {
   display: flex;
   align-items: center;
 }
-nav a, nav button {
-  margin-left: 20px;
-}
+
+nav a,
 nav button {
-  background: #fff;
-  color: #815933;
-  border: 2px solid #CC9544;
+  margin-left: 20px;
+  font-size: 1em;
+  position: relative;
+}
+
+nav button {
+  background: var(--nav-button-bg);
+  color: var(--nav-button-text);
+  border: 2px solid var(--nav-button-border);
   padding: 16px 20px;
   border-radius: 4px;
   font-family: "Poppins";
   cursor: pointer;
-  font-size: 1em;
+  font-size: 1.2em;
 }
-
+/* Changing color on hover for links and buttons */
+nav a:hover,
+nav button:hover,
+.lnks a:hover {
+  background-color: var(--nav-button-text);
+  color: #341105;
+}
 /* auth forms */
-form.signup, form.login {
-  max-width: 800px;
+form.signup,
+form.login {
+  max-width: 450px;
   margin: 40px auto;
   padding: 20px;
-  background: #F8EDE3;
+  background: var(--auth-form-bg);
   border-radius: 4px;
 }
