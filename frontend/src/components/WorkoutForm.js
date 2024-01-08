@@ -57,6 +57,7 @@ const WorkoutForm = () => {
   };
 
   return (
+    <div className="WorkoutformContainer">
     <form className="create" onSubmit={handleSubmit}>
       <h3>Add a New Workout</h3>
 
@@ -87,6 +88,7 @@ const WorkoutForm = () => {
       <button>Add Workout</button>
       {error && <div className="error">{error}</div>}
     </form>
+    </div>
   );
 };
 
