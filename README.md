@@ -1,4 +1,5 @@
 # Workout Tracker App
+![image](https://github.com/ReemAbdelghany/MERNapp/assets/127961912/7b91a010-e936-4203-8a79-66a1e993ccdd)
 
 ## Folder Structure
 
